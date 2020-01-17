@@ -25,6 +25,10 @@ public class PlayerBehavior : MonoBehaviour
             zPos = 1;
             Debug.Log("space was pressed");
         }
+        if (Input.GetKeyDown("w")){
+            xPos = 1;
+            Debug.Log("'w' was pressed");
+        }
     }
 
 }
