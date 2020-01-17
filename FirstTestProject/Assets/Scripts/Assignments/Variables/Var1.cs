@@ -24,7 +24,7 @@ public class Var1 : MonoBehaviour
     void Cookies(float amount, float money, float cost)
     {
         float total;
-        total = amount * cost - money;
+        total = money - (cost * amount);
         print(total);
     }
 }
