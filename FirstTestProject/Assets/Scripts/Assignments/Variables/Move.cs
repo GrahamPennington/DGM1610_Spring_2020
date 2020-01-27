@@ -7,6 +7,8 @@ public class Move : MonoBehaviour
     public float speed = 10.0f;
     public float rotationSpeed = 100.0f;
     AudioSource audioSource;
+    float horizontalSpeed = 2.0f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,23 +18,35 @@ public class Move : MonoBehaviour
     // Update is called once per frame
     void Update()
     {   
-        float jumpTranslation = Input.GetAxis("Jump");
-        float translation = Input.GetAxis("Vertical") * speed;
-        float rotation = Input.GetAxis("Horizontal") * rotationSpeed;
-        translation *= Time.deltaTime;
-        rotation *= Time.deltaTime;
 
-        transform.Translate(0,0,translation);
-        transform.Rotate(0,rotation,0);
-        transform.Translate(0,jumpTranslation,0);
+    }
+
+    void FixedUpdate(){
+        float h = horizontalSpeed * Input.GetAxis("Mouse X");
+
+        transform.Rotate(0, h, 0);
+
+        float vertical = Input.GetAxis("Vertical");
+        float horizontal = Input.GetAxis("Horizontal");
+
+        Vector3 dirVector = new Vector3 (horizontal,Input.GetAxis("Jump"),vertical).normalized;
+        GetComponent<Rigidbody>().MovePosition(transform.position + (dirVector * speed) * Time.deltaTime);
     }
 
     // Detect collision with another object
     void OnCollisionEnter(Collision other){
-        audioSource.Play();
+
+        foreach (ContactPoint contact in other.contacts){
+            Debug.Log(contact.point);
+        }
+        if(other.relativeVelocity.magnitude > 2){
+            audioSource.Play();
+        }
+
     }
 
     void OnTriggerEnter(Collider other){
-        Debug.Log("An event has been triggered!");
+        Debug.Log("entered");
+        Destroy(other.gameObject);
     }
 }
