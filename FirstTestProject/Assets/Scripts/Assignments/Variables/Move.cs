@@ -46,7 +46,6 @@ public class Move : MonoBehaviour
     }
 
     void OnTriggerEnter(Collider other){
-        Debug.Log("entered");
-        Destroy(other.gameObject);
+        
     }
 }
