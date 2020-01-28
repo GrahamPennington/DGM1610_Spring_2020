@@ -20,7 +20,7 @@ public class CompleteCameraControl : MonoBehaviour
 
     void FixedUpdate(){
         float h = horizontalSpeed * Input.GetAxis("CameraRotation");
-        transform.Rotate(0,0,h);
+        transform.Rotate(0,h,0);
     }
 
     void LateUpdate(){

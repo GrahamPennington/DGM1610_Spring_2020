@@ -6,19 +6,19 @@ public class Move : MonoBehaviour
 {
     public float speed = 10.0f;
     public float rotationSpeed = 100.0f;
-    AudioSource audioSource;
-    float horizontalSpeed = 2.0f;
+    public float horizontalSpeed = 2.0f;
+    char got;
 
     // Start is called before the first frame update
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
+
     }
 
     // Update is called once per frame
     void Update()
     {   
-
+        
     }
 
     void FixedUpdate(){
@@ -36,16 +36,26 @@ public class Move : MonoBehaviour
     // Detect collision with another object
     void OnCollisionEnter(Collision other){
 
-        foreach (ContactPoint contact in other.contacts){
-            Debug.Log(contact.point);
-        }
-        if(other.relativeVelocity.magnitude > 2){
-            audioSource.Play();
-        }
+        
+        if(other.gameObject.CompareTag("Obstacle")){
 
-    }
+            Debug.Log("Colliding with an obstacle");
+            foreach(ContactPoint contacts in other.contacts){
+                Debug.Log(contacts.point);
+            }
+        }
+        else if (other.gameObject.CompareTag("Floor")){
+            Debug.Log("Colliding with floor");
+        }
+        else{
+            Debug.Log("Not colliding");
+        }
+    } 
 
     void OnTriggerEnter(Collider other){
-        
+        if(other.gameObject.CompareTag("PowerUp")){
+            Destroy(other.gameObject);
+            Debug.Log("You got the power up");
+        }
     }
 }
