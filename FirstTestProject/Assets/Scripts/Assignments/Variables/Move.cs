@@ -31,15 +31,15 @@ public class Move : MonoBehaviour
         Vector3 dirVector = new Vector3 (0,(jumpInput * jumpSpeed),(verticalInput * speed));
         //transform.Translate(dirVector * Time.deltaTime);
         Vector3 rotVector = new Vector3 (0,horizontalInput,0).normalized;
-       //transform.Rotate(rotVector * rotationSpeed * Time.deltaTime);
-         m_Rigidbody = GetComponent<Rigidbody>();
+        //transform.Rotate(rotVector * rotationSpeed * Time.deltaTime);
+        m_Rigidbody = GetComponent<Rigidbody>();
         // Vector3 dirVector = new Vector3 (0,0,verticalInput).normalized;
 
         // Vector3 m_EulerAngleVelocity = new Vector3(0, horizontalInput, 0);
         // Quaternion rotVector = Quaternion.Euler(m_EulerAngleVelocity * Time.deltaTime);
-         m_Rigidbody.MovePosition(transform.position + dirVector * Time.deltaTime);
-         Quaternion deltaRotation = Quaternion.Euler(rotVector * rotationSpeed * Time.deltaTime);
-         m_Rigidbody.MoveRotation(transform.rotation * deltaRotation);
+        m_Rigidbody.MovePosition(transform.position + dirVector * Time.deltaTime);
+        Quaternion deltaRotation = Quaternion.Euler(rotVector * rotationSpeed * Time.deltaTime);
+        m_Rigidbody.MoveRotation(transform.rotation * deltaRotation);
         
         //transform.Rotate(0,(horizontal * speed),0);
     }
