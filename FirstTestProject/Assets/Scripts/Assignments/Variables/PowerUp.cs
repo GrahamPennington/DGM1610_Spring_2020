@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class PowerUp : MonoBehaviour
 {
+    public int health;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -16,7 +18,17 @@ public class PowerUp : MonoBehaviour
         
     }
 
+    void OnCollisionEnter(Collision other){
+        if(other.gameObject.CompareTag("Player")){
+            ScoreManager.AddPoints(health);
+            Destroy(gameObject);
+        }
+    }
+
     void OnTriggerEnter(Collider other){
-        Debug.Log("You can do it!");
+       if(other.gameObject.CompareTag("Player")){
+           ScoreManager.AddPoints(health);
+           Destroy(gameObject);
+       }
     }
 }
