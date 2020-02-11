@@ -20,6 +20,7 @@ public class Move : MonoBehaviour
     public CharacterController controller;
 
     public GameObject projectilePreFab;
+    public Transform parent;
 
     // Update is called once per frame
     void Update()
@@ -46,7 +47,7 @@ public class Move : MonoBehaviour
         controller.Move(velocity * Time.deltaTime);
 
         if(Input.GetMouseButtonDown(0)){
-            Instantiate(projectilePreFab, transform.position, projectilePreFab.transform.rotation);
+            Instantiate(projectilePreFab, parent, false);
         }
     }
 
