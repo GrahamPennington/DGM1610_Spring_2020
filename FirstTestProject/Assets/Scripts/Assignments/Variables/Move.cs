@@ -8,10 +8,9 @@ public class Move : MonoBehaviour
     public float verticalInput;
     public float horizontalInput;
     public float rotationSpeed;
-    public float jumpInput;
-    public float jumpSpeed;
 
-    Rigidbody m_Rigidbody;
+
+    public GameObject projectilePreFab;
 
     // Start is called before the first frame update
     void Start()
@@ -24,12 +23,15 @@ public class Move : MonoBehaviour
     {   
         verticalInput = Input.GetAxis("Vertical");
         horizontalInput = Input.GetAxis("Horizontal");
-        jumpInput = Input.GetAxis("Jump");
+
+        if(Input.GetMouseButtonDown(0)){
+            Instantiate(projectilePreFab, transform.position, projectilePreFab.transform.rotation);
+        }
     }
 
     void FixedUpdate(){
         
-        transform.Translate(0,jumpInput * jumpSpeed * Time.deltaTime,(verticalInput * speed * Time.deltaTime));
+        transform.Translate(0,0,(verticalInput * speed * Time.deltaTime));
         transform.Rotate(0,(horizontalInput * rotationSpeed * Time.deltaTime),0);
     }
 

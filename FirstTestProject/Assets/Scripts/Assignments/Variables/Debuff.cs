@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PowerUp : MonoBehaviour
+public class Debuff : MonoBehaviour
 {
     public int health;
 
@@ -20,16 +20,9 @@ public class PowerUp : MonoBehaviour
 
     void OnCollisionEnter(Collision other){
         if(other.gameObject.CompareTag("Player")){
-            ScoreManager.AddPoints(health);
+            ScoreManager.RemovePoints(health);
             Destroy(gameObject);
         }
         
-    }
-
-    void OnTriggerEnter(Collider other){
-       if(other.gameObject.CompareTag("Player")){
-           ScoreManager.AddPoints(health);
-           Destroy(gameObject);
-       }
     }
 }

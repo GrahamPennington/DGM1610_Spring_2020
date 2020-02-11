@@ -24,4 +24,9 @@ public class ScoreManager : MonoBehaviour
         Debug.Log("Health: " + score);
     }
 
+    public static void RemovePoints(int health){
+        score -= health;
+        Debug.Log("Health: " + score);
+    }
+
 }
