@@ -18,7 +18,7 @@ public class Move : MonoBehaviour
     public LayerMask groundMask;
 
     public CharacterController controller;
-
+    //public Rigidbody controller;
 
 
     // Update is called once per frame
