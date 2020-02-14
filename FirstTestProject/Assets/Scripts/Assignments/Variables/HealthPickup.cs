@@ -19,9 +19,9 @@ public class HealthPickup : Pickup
         
     }
 
-    void onControllerColliderHit(ControllerColliderHit hit){
+    void OnCollisionEnter(Collision other){
         Debug.Log("You gain " + healthAmt + " health");
-        if(hit.gameObject.CompareTag("Player")){
+        if(other.gameObject.CompareTag("Player")){
             Debug.Log("You gain " + healthAmt + " health");
             Destroy(gameObject);
         }
