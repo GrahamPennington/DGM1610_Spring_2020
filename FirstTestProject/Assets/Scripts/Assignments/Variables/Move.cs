@@ -69,7 +69,7 @@ public class Move : MonoBehaviour
 
         if(Input.GetButtonDown("Jump") && isGrounded){
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
-            _body.AddForce(Vector2.up * velocity * 25f);
+            _body.AddForce(Vector2.up * velocity * 20f);
         }
     }
 

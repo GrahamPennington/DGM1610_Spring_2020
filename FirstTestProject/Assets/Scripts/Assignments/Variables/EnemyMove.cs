@@ -7,11 +7,12 @@ public class EnemyMove : MonoBehaviour
 
     public Transform target;
     public float moveSpeed;
+    public int health = 50;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        target = GameObject.Find("Player").transform;
     }
 
     // Update is called once per frame

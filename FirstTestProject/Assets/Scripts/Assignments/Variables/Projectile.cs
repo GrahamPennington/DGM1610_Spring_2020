@@ -5,6 +5,8 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     public GameObject projectilePreFab;
+    
+    public int damage = 10;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +18,17 @@ public class Projectile : MonoBehaviour
     {
         if(Input.GetButtonDown("Fire1")){
             Instantiate(projectilePreFab, transform.position, transform.rotation);
+        }
+    }
+
+    void OnCollisionEnter(Collision other)
+    {
+        if(other.gameObject.tag == "Enemy")
+        {
+            //Destroy(other.gameObject);
+            Debug.Log("Hit Enemy");
+            Debug.Log(other.gameObject.GetComponent<EnemyMove>().health);
+            other.gameObject.GetComponent<EnemyMove>().health -= damage;
         }
     }
 }

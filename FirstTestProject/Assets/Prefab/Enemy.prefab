@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 44540462590427050}
   m_Layer: 8
   m_Name: Enemy
-  m_TagString: Obstacle
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -108,6 +108,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   moveSpeed: 4
+  health: 50
 --- !u!54 &44540462590427050
 Rigidbody:
   m_ObjectHideFlags: 0
