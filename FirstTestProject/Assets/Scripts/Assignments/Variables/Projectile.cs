@@ -25,7 +25,6 @@ public class Projectile : MonoBehaviour
     {
         if(other.gameObject.tag == "Enemy")
         {
-            //Destroy(other.gameObject);
             Debug.Log("Hit Enemy");
             Debug.Log(other.gameObject.GetComponent<EnemyMove>().health);
             other.gameObject.GetComponent<EnemyMove>().health -= damage;

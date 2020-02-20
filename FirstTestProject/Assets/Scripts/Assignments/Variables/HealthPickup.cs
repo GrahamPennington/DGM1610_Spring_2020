@@ -20,7 +20,7 @@ public class HealthPickup : Pickup
     }
 
     void OnCollisionEnter(Collision other){
-        Debug.Log("You gain " + healthAmt + " health");
+        
         if(other.gameObject.CompareTag("Player")){
             Debug.Log("You gain " + healthAmt + " health");
             Destroy(gameObject);
