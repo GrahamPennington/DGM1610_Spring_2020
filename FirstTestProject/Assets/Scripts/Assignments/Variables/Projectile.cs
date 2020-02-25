@@ -23,11 +23,12 @@ public class Projectile : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
+        Destroy(gameObject);
         if(other.gameObject.tag == "Enemy")
         {
             Debug.Log("Hit Enemy");
             Debug.Log(other.gameObject.GetComponent<EnemyMove>().health);
-            other.gameObject.GetComponent<EnemyMove>().health -= damage;
+            other.gameObject.GetComponent<EnemyMove>().health -= 10;
         }
     }
 }

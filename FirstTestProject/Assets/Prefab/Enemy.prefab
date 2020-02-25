@@ -106,10 +106,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88e7317447d2842199a8f1fe968b3351, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  moveSpeed: 4
+  player: {fileID: 0}
+  moveSpeed: 15
   health: 50
-  damage: 1
 --- !u!54 &44540462590427050
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -124,5 +123,5 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0

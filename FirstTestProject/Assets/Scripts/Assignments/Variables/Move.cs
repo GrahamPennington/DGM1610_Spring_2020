@@ -45,12 +45,6 @@ public class Move : MonoBehaviour
         inputX = Input.GetAxisRaw("Horizontal");
         inputZ = Input.GetAxisRaw("Vertical");
 
-
-        // velocity.y += gravity * Time.deltaTime;
-        //controller.Move(velocity * Time.deltaTime);
-        
-        
-
     }
 
     void FixedUpdate()
