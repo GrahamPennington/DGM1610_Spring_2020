@@ -8,7 +8,6 @@ public class EnemyMove : MonoBehaviour
     public GameObject player;
     private Rigidbody enemyRb;
     public float moveSpeed;
-    public int health = 50;
 
     private enum State {
         Waiting,
