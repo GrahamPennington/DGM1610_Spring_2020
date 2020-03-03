@@ -5,11 +5,16 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
 
-    public int health = 5;
+    public int currentHealth;
+    public int maxHealth = 5;
+    public Transform spawnPoint;
+    public int points = 10;
+
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        currentHealth = maxHealth;
     }
 
     // Update is called once per frame
@@ -19,12 +24,13 @@ public class EnemyHealth : MonoBehaviour
     }
 
     public void TakeDamage(int damage){
-        if(health > 0){
-            health -= damage;
-        }
-        if(health == 0){
+        currentHealth -= damage;
+        if(currentHealth <= 0){
+
+            currentHealth = 0;
+            Debug.Log("Enemy is dead");
             Destroy(gameObject);
-            Debug.Log("Killed Enemy");
+
         }
         
     }

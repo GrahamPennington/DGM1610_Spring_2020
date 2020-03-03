@@ -10,7 +10,7 @@ public class Bullet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //StartCoroutine(DestroyBullet());
+        StartCoroutine(DestroyBullet());
     }
 
     void OnCollisionEnter(Collision other){
@@ -24,8 +24,8 @@ public class Bullet : MonoBehaviour
         }
     }
 
-    // IEnumerator DestroyBullet(){
-    //     yield return new WaitForSeconds(time);
-    //     DestroyBullet(gameObject);
-    // }
+    IEnumerator DestroyBullet(){
+        yield return new WaitForSeconds(time);
+        Destroy(gameObject);
+    }
 }
