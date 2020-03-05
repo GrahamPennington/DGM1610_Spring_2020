@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Debuff : MonoBehaviour
+public class Debuff : Pickup
 {
     public int health;
 

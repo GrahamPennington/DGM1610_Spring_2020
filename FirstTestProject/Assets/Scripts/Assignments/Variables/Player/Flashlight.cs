@@ -28,9 +28,7 @@ public class Flashlight : MonoBehaviour
             
             }
         }
-
-        
+ 
     }
-
 
 }
