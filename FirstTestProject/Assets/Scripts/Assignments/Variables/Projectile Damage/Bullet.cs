@@ -22,9 +22,9 @@ public class Bullet : MonoBehaviour
         
         if(other.gameObject.CompareTag("Enemy")){
             var hit = other.gameObject;
-            var health = hit.GetComponent<EnemyHealth>();
+            var health = hit.GetComponent<Health>();
 
-            if (health != null){
+            if (health != null && hit.CompareTag("Enemy")){
                 health.TakeDamage(damage);
                 Debug.Log("Ouch, you hit me!");
                 Destroy(gameObject);
