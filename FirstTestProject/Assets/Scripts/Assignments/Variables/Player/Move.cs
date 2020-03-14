@@ -61,10 +61,6 @@ public class Move : MonoBehaviour
         head.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         _body.MoveRotation(_body.rotation * Quaternion.Euler(new Vector3(0, mouseX, 0)));
 
-        // if(Input.GetKeyDown(KeyCode.LeftControl)){
-        //     head.transform.position -= new Vector3 (0,0.2f,0);
-        // }
-
         if(Input.GetButtonDown("Jump") && isGrounded){
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
             _body.AddForce(Vector2.up * velocity * 20f);
