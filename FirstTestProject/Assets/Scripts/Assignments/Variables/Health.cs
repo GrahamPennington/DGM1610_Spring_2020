@@ -14,11 +14,11 @@ public class Health : MonoBehaviour
 
         public void TakeDamage(int damage)
         {
-                currentHealh -= damage;
+                currentHealth -= damage;
 
-                if (currentHealh <= 0)
+                if (currentHealth <= 0)
                 {
-                        currentHealh = 0;
+                        currentHealth = 0;
                         Debug.Log(gameObject.tag + " has died.");
 
                         if (gameObject.tag == "Enemy")
@@ -27,9 +27,9 @@ public class Health : MonoBehaviour
                         }
                         else if (gameObject.tag == "Player")
                         {
-                                currentHealh = maxHealth;
+                                currentHealth = maxHealth;
                                 Debug.Log("Please try better.");
-                                Debug.Log("Resetting player's health to " + currentHealh);
+                                Debug.Log("Resetting player's health to " + currentHealth);
                         }
                 }
         }

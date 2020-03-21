@@ -5,17 +5,19 @@ using UnityEngine;
 public class ForSpawn : MonoBehaviour
 {
     public GameObject[] spawnPoints;
-    public int spawnIndex;
+    private int spawnIndex;
     public int numberOfEnemies;
     public GameObject[] enemyPreFabs;
-    public int enemyIndex;
+    private int enemyIndex;
+    
 
     private void Start()
     {
-        numberOfEnemies = 5;
+        numberOfEnemies = 2;
+        HandleEnemySpawn();
     }
 
-    private void Update()
+    private void HandleEnemySpawn()
     {
         enemyIndex = Random.Range(0, enemyPreFabs.Length);
         spawnIndex = Random.Range(0, spawnPoints.Length);
