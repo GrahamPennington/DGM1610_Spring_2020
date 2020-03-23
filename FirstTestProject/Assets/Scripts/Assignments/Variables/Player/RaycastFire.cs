@@ -5,24 +5,31 @@ using UnityEngine;
 public class RaycastFire : MonoBehaviour
 {
     public GameObject explosion;
+    public GameObject flash;
 
     public int damage = 2;
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-
+        flash.SetActive(false);
+    }
+    
+    private void Update()
+    {
         float hitForce = 200f;
-        
+
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
-        
+
         if (Input.GetButtonDown("Fire1"))
+        {
+            flash.SetActive(true);
+            StartCoroutine(MuzzleFlashTimer());
             if (Physics.Raycast(ray, out hit, 100))
             {
                 print("Hit something!");
                 Debug.DrawLine(ray.origin, hit.point);
-                
+
                 if (hit.rigidbody != null)
                 {
                     hit.rigidbody.AddForce(ray.direction * hitForce);
@@ -35,12 +42,19 @@ public class RaycastFire : MonoBehaviour
                 {
                     var health = hit.collider.GetComponent<EnemyHealth>();
 
-                    if (health != null){
+                    if (health != null)
+                    {
                         health.TakeDamage(damage);
                         Debug.Log("Ouch, you hit me!");
                     }
                 }
             }
+        }
+    }
 
+    private IEnumerator MuzzleFlashTimer()
+    {
+        yield return new WaitForSeconds(0.03f);
+        flash.SetActive(false);
     }
 }
