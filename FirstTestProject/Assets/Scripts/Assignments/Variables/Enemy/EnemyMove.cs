@@ -9,7 +9,7 @@ public class EnemyMove : MonoBehaviour
     private Rigidbody enemyRb;
     public float moveSpeed;
 
-    private bool isInView;
+    public static float angle;
 
     private enum State {
         Waiting,
@@ -24,17 +24,19 @@ public class EnemyMove : MonoBehaviour
         player = GameObject.Find("Player");
         enemyRb = GetComponent<Rigidbody>();
         state = State.Waiting;
-        isInView = false;
     }
-
-    // Update is called once per frame
+    
+    
     void FixedUpdate()
     {
         float distance = Vector3.Distance(player.transform.position, transform.position);
+        Vector3 targetDir = player.transform.position - transform.position;
+        angle = Vector3.Angle(targetDir, transform.forward);
+        
         switch(state) {
             default:
             case State.Waiting:
-                if(isInView || distance < 10f){
+                if(angle < 75f && distance < 10f){
                     state = State.Chasing;
                 }
                 break;
@@ -43,18 +45,10 @@ public class EnemyMove : MonoBehaviour
                 enemyRb.AddForce((player.transform.position - transform.position).normalized * moveSpeed);
                 if(distance > 23f){
                     state = State.Waiting;
-                    isInView = false;
                 }
                 break;
         }
         
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            isInView = true;
-        }
-    }
 }

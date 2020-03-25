@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 5955066384966174420}
   - component: {fileID: 5955066384966174427}
   - component: {fileID: 5955066384966174426}
-  - component: {fileID: -8733135593401491872}
-  - component: {fileID: 8513174547614792816}
+  - component: {fileID: 4688449817678224950}
+  - component: {fileID: 4311462024865572321}
   m_Layer: 0
   m_Name: Big Boy
   m_TagString: Enemy
@@ -128,7 +128,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &-8733135593401491872
+--- !u!114 &4688449817678224950
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -137,23 +137,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 5955066384966174425}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5096991d057ee41edbaf84a8d383bf96, type: 3}
+  m_Script: {fileID: 11500000, guid: 3ef35ee2d8723504f8771971afe21998, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 0
-  maxHealth: 5
-  spawnPoint: {fileID: 0}
-  points: 10
---- !u!65 &8513174547614792816
-BoxCollider:
+  damage: 1
+  player: {fileID: 0}
+--- !u!114 &4311462024865572321
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5955066384966174425}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 6, y: 2, z: 3}
-  m_Center: {x: 0, y: 0, z: 2}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1732a15b86ce1482c91d529653ec28b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 5
+  currentHealth: 0

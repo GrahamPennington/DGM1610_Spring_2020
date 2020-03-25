@@ -25,7 +25,7 @@ public class RaycastFire : MonoBehaviour
         {
             flash.SetActive(true);
             StartCoroutine(MuzzleFlashTimer());
-            if (Physics.Raycast(ray, out hit, 100))
+            if (Physics.Raycast(ray, out hit, 100f))
             {
                 print("Hit something!");
                 Debug.DrawLine(ray.origin, hit.point);
@@ -36,18 +36,18 @@ public class RaycastFire : MonoBehaviour
                     GameObject explPoint = Instantiate(explosion, hit.point, Quaternion.identity);
                     explPoint.GetComponent<ParticleSystem>().Play();
                     Destroy(explPoint, 3);
-                }
-
-                if (hit.collider.tag == "Enemy")
-                {
-                    var health = hit.collider.GetComponent<EnemyHealth>();
-
-                    if (health != null)
+                    if (hit.collider.tag == "Enemy")
                     {
-                        health.TakeDamage(damage);
-                        Debug.Log("Ouch, you hit me!");
+                        var health = hit.collider.GetComponent<Health>();
+
+                        if (health != null)
+                        {
+                            health.TakeDamage(damage);
+                            Debug.Log("Ouch, you hit me!");
+                        }
                     }
                 }
+
             }
         }
     }

@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 44540462590427046}
   - component: {fileID: 44540462590427049}
   - component: {fileID: 44540462590427050}
-  - component: {fileID: 5918746525788280123}
   - component: {fileID: 5623501143139539842}
-  - component: {fileID: 8694332695910070584}
+  - component: {fileID: 8365144931356949786}
+  - component: {fileID: 3416394347971557008}
   m_Layer: 8
   m_Name: Enemy
   m_TagString: Enemy
@@ -96,8 +96,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 0.9999999, z: 1.053905}
+  m_Center: {x: -2.546895e-16, y: 0, z: -0.026952712}
 --- !u!114 &44540462590427049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,22 +128,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &5918746525788280123
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 44540462590427047}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5096991d057ee41edbaf84a8d383bf96, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentHealth: 0
-  maxHealth: 5
-  spawnPoint: {fileID: 0}
-  points: 10
 --- !u!108 &5623501143139539842
 Light:
   m_ObjectHideFlags: 0
@@ -205,16 +189,31 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!65 &8694332695910070584
-BoxCollider:
+--- !u!114 &8365144931356949786
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 44540462590427047}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 5, y: 0.99999994, z: 3}
-  m_Center: {x: 0, y: 0, z: 2}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ef35ee2d8723504f8771971afe21998, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  player: {fileID: 0}
+--- !u!114 &3416394347971557008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 44540462590427047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1732a15b86ce1482c91d529653ec28b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 5
+  currentHealth: 0
