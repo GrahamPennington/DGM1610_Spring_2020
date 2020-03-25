@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 44540462590427050}
   - component: {fileID: 5918746525788280123}
   - component: {fileID: 5623501143139539842}
+  - component: {fileID: 8694332695910070584}
   m_Layer: 8
   m_Name: Enemy
   m_TagString: Enemy
@@ -31,7 +32,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 44540462590427047}
   m_LocalRotation: {x: -0, y: 0.00000008940696, z: -0, w: 1}
-  m_LocalPosition: {x: -1.8930001, y: 1.8199999, z: 4.99}
+  m_LocalPosition: {x: -1.8930001, y: 1.8199999, z: 5.18}
   m_LocalScale: {x: 2.0341, y: 2.8633554, z: 1.6044}
   m_Children: []
   m_Father: {fileID: 0}
@@ -59,6 +60,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -150,8 +152,9 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 44540462590427047}
   m_Enabled: 1
-  serializedVersion: 9
+  serializedVersion: 10
   m_Type: 2
+  m_Shape: 0
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_Intensity: 2.62
   m_Range: 10
@@ -202,3 +205,16 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!65 &8694332695910070584
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 44540462590427047}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5, y: 0.99999994, z: 3}
+  m_Center: {x: 0, y: 0, z: 2}

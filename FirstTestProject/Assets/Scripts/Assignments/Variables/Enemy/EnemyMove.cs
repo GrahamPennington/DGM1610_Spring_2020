@@ -9,6 +9,8 @@ public class EnemyMove : MonoBehaviour
     private Rigidbody enemyRb;
     public float moveSpeed;
 
+    private bool isInView;
+
     private enum State {
         Waiting,
         Chasing,
@@ -22,6 +24,7 @@ public class EnemyMove : MonoBehaviour
         player = GameObject.Find("Player");
         enemyRb = GetComponent<Rigidbody>();
         state = State.Waiting;
+        isInView = false;
     }
 
     // Update is called once per frame
@@ -31,7 +34,7 @@ public class EnemyMove : MonoBehaviour
         switch(state) {
             default:
             case State.Waiting:
-                if(distance < 15f){
+                if(isInView || distance < 10f){
                     state = State.Chasing;
                 }
                 break;
@@ -40,9 +43,18 @@ public class EnemyMove : MonoBehaviour
                 enemyRb.AddForce((player.transform.position - transform.position).normalized * moveSpeed);
                 if(distance > 23f){
                     state = State.Waiting;
+                    isInView = false;
                 }
                 break;
         }
         
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            isInView = true;
+        }
     }
 }

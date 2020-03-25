@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5955066384966174427}
   - component: {fileID: 5955066384966174426}
   - component: {fileID: -8733135593401491872}
+  - component: {fileID: 8513174547614792816}
   m_Layer: 0
   m_Name: Big Boy
   m_TagString: Enemy
@@ -58,6 +59,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -110,7 +112,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   moveSpeed: 15
-  health: 70
 --- !u!54 &5955066384966174426
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -139,4 +140,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5096991d057ee41edbaf84a8d383bf96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 8
+  currentHealth: 0
+  maxHealth: 5
+  spawnPoint: {fileID: 0}
+  points: 10
+--- !u!65 &8513174547614792816
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5955066384966174425}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6, y: 2, z: 3}
+  m_Center: {x: 0, y: 0, z: 2}
