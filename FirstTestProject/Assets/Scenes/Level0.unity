@@ -5017,6 +5017,7 @@ MonoBehaviour:
     m_Bits: 256
   _body: {fileID: 653389948}
   head: {fileID: 605312296}
+  stamina: 10
 --- !u!136 &653389946
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -5175,7 +5176,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh16986
+  m_Name: pb_Mesh18758
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

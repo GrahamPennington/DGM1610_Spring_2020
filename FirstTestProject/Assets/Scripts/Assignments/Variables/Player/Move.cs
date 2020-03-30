@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Move : MonoBehaviour
 {
-    public float speed = 12f;
+    public float speed;
     public float inputZ;
     public float inputX;
     public float gravity = -9.81f;
@@ -23,12 +23,18 @@ public class Move : MonoBehaviour
     private float mouseX;
     private float mouseY;
     private float xRotation = 0f;
+    private float normalSpeed = 12;
+    private float sprintSpeed = 18f;
+    public float stamina;
+    private float maxStamina = 10f;
+    private float fatigueRate = 10f;
 
 
     void Start() 
     {
         _body = GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked;
+        stamina = maxStamina;
     }
 
     // Update is called once per frame
@@ -49,6 +55,22 @@ public class Move : MonoBehaviour
 
     void FixedUpdate()
     {
+        HandleMovement();
+    }
+
+    private void HandleMovement()
+    {
+        if (Input.GetKey(KeyCode.LeftShift) && stamina > 2)
+        {
+            speed = sprintSpeed;
+            HandleStamina();
+        }
+        else
+        {
+            speed = normalSpeed;
+            HandleStamina();
+        }
+        
         Vector3 move = (transform.right * inputX + transform.forward * inputZ).normalized;
         _body.MovePosition(transform.position + move * speed * Time.fixedDeltaTime);
 
@@ -64,6 +86,29 @@ public class Move : MonoBehaviour
         if(Input.GetButtonDown("Jump") && isGrounded){
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
             _body.AddForce(Vector2.up * velocity * 20f);
+        }
+    }
+
+    private void HandleStamina()
+    {
+        if (stamina > 0 && speed == sprintSpeed)
+        {
+            stamina -= Time.deltaTime * fatigueRate;
+        }
+
+        if (stamina <= 0)
+        {
+            stamina = 0;
+        }
+
+        if (stamina >= maxStamina)
+        {
+            stamina = maxStamina;
+        }
+        
+        if (stamina != maxStamina && speed != sprintSpeed && !Input.GetKey(KeyCode.LeftShift))
+        {
+            stamina += Time.deltaTime * fatigueRate;
         }
     }
 
