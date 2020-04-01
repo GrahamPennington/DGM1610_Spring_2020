@@ -10,11 +10,14 @@ public class WinLose : MonoBehaviour
     public Text timerLabel;
 
     private float time;
+
+    private bool alive;
     
     private void Start()
     {
         StartCoroutine(Timer());
         time = 60f;
+        alive = true;
     }
 
     private void Update()
@@ -28,20 +31,32 @@ public class WinLose : MonoBehaviour
             timerLabel.text = "Time: " + minutes.ToString() + ":" + seconds.ToString("00");
         }
 
+        if (PlayerHealth.health <= 0)
+        {
+            alive = false;
+            WinOrLose();
+            Time.timeScale = 0;
+        }
     }
-    
+
+
+    private void WinOrLose()
+    {
+        if (GameObject.FindGameObjectsWithTag("Enemy").Length != 0 || !alive)
+        {
+            winLabel.text = "You Lose!";
+        }
+        else
+        {
+            winLabel.text = "You Win!";
+        }
+        
+    }
 
     private IEnumerator Timer()
     {
         yield return new WaitForSeconds(60);
 
-        if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
-        {
-            winLabel.text = "You Win!";
-        }
-        else
-        {
-            winLabel.text = "You Lose!";
-        }
+        WinOrLose();
     }
 }

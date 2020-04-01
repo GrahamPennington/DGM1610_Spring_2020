@@ -21,7 +21,7 @@ public class RaycastFire : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") && Time.timeScale != 0)
         {
             flash.SetActive(true);
             StartCoroutine(MuzzleFlashTimer());

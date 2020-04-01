@@ -27,9 +27,7 @@ public class Health : MonoBehaviour
                         }
                         else if (gameObject.tag == "Player")
                         {
-                                currentHealth = maxHealth;
                                 Debug.Log("Please try better.");
-                                Debug.Log("Resetting player's health to " + currentHealth);
                         }
                 }
         }

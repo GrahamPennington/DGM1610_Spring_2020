@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyFire : MonoBehaviour
 {
-    public int damage = 1;
+    public int damage;
     public GameObject player;
 
     private bool canFire;
@@ -13,6 +13,7 @@ public class EnemyFire : MonoBehaviour
 
     private void Start()
     {
+        damage = 2;
         player = GameObject.Find("Player");
         canFire = true;
     }
@@ -39,7 +40,7 @@ public class EnemyFire : MonoBehaviour
         Debug.DrawLine(ray.origin, hit.point);
         if (hit.collider.tag == "Player")
         {
-            var health = hit.collider.GetComponent<Health>();
+            var health = hit.collider.GetComponent<PlayerHealth>();
 
             if (health != null)
             {

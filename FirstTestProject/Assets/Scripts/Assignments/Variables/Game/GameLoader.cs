@@ -13,6 +13,7 @@ public class GameLoader : MonoBehaviour
         Button btn = playButton.GetComponent<Button>();
         btn.onClick.AddListener(TaskOnClick);
     }
+    
 
     void TaskOnClick(){
         Debug.Log("Loading Game...");
