@@ -5,11 +5,11 @@ using UnityEngine;
 public class Flashlight : MonoBehaviour
 {
 
-    private Light light;
+    private Light flashlight;
 
     void Start(){
-        light = GetComponent<Light>();
-        light.enabled = false;
+        flashlight = GetComponent<Light>();
+        flashlight.enabled = false;
     }
 
     // Update is called once per frame
@@ -17,14 +17,14 @@ public class Flashlight : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F))
         {
-            if (light.enabled == true)
+            if (flashlight.enabled == true)
             {  
-                light.enabled = false;
+                flashlight.enabled = false;
                 
             }
-            else if (light.enabled == false)
+            else if (flashlight.enabled == false)
             {  
-                light.enabled = true;
+                flashlight.enabled = true;
             
             }
         }
