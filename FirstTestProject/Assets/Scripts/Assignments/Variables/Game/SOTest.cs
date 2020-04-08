@@ -6,7 +6,7 @@ public class SOTest : MonoBehaviour
 {
     public SO data;
 
-    public GameObject model;
+    private GameObject model;
 
     private void Start()
     {
