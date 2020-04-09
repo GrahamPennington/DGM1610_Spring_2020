@@ -7,7 +7,7 @@ public class RaycastFire : MonoBehaviour
     public GameObject explosion;
     public GameObject flash;
 
-    public int damage = 2;
+    public int damage;
 
     private void Start()
     {
@@ -17,6 +17,8 @@ public class RaycastFire : MonoBehaviour
     private void Update()
     {
         float hitForce = 200f;
+
+        damage = ScriptablePistol.pistolDamage;
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
