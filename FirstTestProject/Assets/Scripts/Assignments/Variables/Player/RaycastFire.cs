@@ -18,7 +18,7 @@ public class RaycastFire : MonoBehaviour
     {
         float hitForce = 200f;
 
-        damage = ScriptablePistol.pistolDamage;
+        damage = SciptablePistol.pistolDamage;
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="$PROJECT_DIR$" t="IncludeRecursive">
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="Scripts" t="Include">
+          <e p="Assignments" t="Include">
+            <e p="Variables" t="Include">
+              <e p="Enemy" t="Include">
+                <e p="EnemyFire.cs" t="Include" />
+                <e p="EnemyHealth.cs" t="Include" />
+                <e p="EnemyMove.cs" t="Include" />
+                <e p="ForSpawn.cs" t="Include" />
+                <e p="SpawnManager.cs" t="Include" />
+                <e p="Wander.cs" t="Include" />
+              </e>
+              <e p="Game" t="Include">
+                <e p="ExitScreen.cs" t="Include" />
+                <e p="GameLoader.cs" t="Include" />
+                <e p="Health.cs" t="Include" />
+                <e p="WinLose.cs" t="Include" />
+              </e>
+              <e p="Pickups" t="Include">
+                <e p="Debuff.cs" t="Include" />
+                <e p="HealthPickup.cs" t="Include" />
+                <e p="Pickup.cs" t="Include" />
+                <e p="ScoreManager.cs" t="Include" />
+                <e p="Trigger.cs" t="Include" />
+              </e>
+              <e p="Player" t="Include">
+                <e p="Flashlight.cs" t="Include" />
+                <e p="Move.cs" t="Include" />
+                <e p="PlayerHealth.cs" t="Include" />
+                <e p="RaycastFire.cs" t="Include" />
+              </e>
+              <e p="Projectile Damage" t="Include">
+                <e p="Bullet.cs" t="Include" />
+                <e p="Destroy.cs" t="Include" />
+                <e p="MoveForward.cs" t="Include" />
+                <e p="Projectile.cs" t="Include" />
+              </e>
+              <e p="ScriptableObjects" t="Include">
+                <e p="SciptablePistol.cs" t="Include" />
+                <e p="ScriptableGun.cs" t="Include" />
+                <e p="SO.cs" t="Include" />
+                <e p="SOTest.cs" t="Include" />
+              </e>
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="FirstTestProject.sln" t="IncludeFlat" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="Temp/bin" t="ExcludeRecursive" />
+    </e>
+    <e p="$USER_HOME$/Library/Caches/Rider2019.3/extResources" t="IncludeRecursive" />
+    <e p="$USER_HOME$/Library/Caches/Rider2019.3/resharper-host/local/Transient/ReSharperHost/v193/SolutionCaches/_FirstTestProject.1390558396.00" t="ExcludeRecursive" />
+  </component>
+</project>

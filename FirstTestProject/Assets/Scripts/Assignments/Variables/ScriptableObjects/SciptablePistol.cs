@@ -2,15 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScriptablePistol : MonoBehaviour
+public class SciptablePistol : MonoBehaviour
 {
     public ScriptableGun data;
 
-    private GameObject model;
-
-    public int pistolDamage;
+    public static int pistolDamage;
 
     public float pistolRoF;
+
+	[SerializeField] private GameObject model;
 
     private void Start()
     {

@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName="New Gun", menuName="Scriptable Object\Gun Object")]
+[CreateAssetMenu(fileName="New Gun", menuName="Scriptable Object/Gun Object")]
 
 public class ScriptableGun : ScriptableObject
 {
-    public string guntName;
+    public string gunName;
 
     public string description;
 
