@@ -20,6 +20,6 @@ public class PlayerHealth : Health
     void Update()
     {
         health = currentHealth;
-        healthText.text = string.Format("{0}/{1}", currentHealth.ToString(), maxHealth.ToString());
+        healthText.text = string.Format("Health {0}/{1}", currentHealth.ToString(), maxHealth.ToString());
     }
 }
