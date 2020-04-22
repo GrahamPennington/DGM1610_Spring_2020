@@ -5,24 +5,15 @@ using UnityEngine;
 public class HealthPickup : Pickup
 {
 
-    public int healthAmt = 100;
+    public int healthAmt = 5;
+    
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    void OnCollisionEnter(Collision other){
+    void OnTriggerEnter(Collider other){
         
         if(other.gameObject.CompareTag("Player")){
             Debug.Log("You gain " + healthAmt + " health");
+            var health = other.GetComponent<Health>();
+            health.TakeDamage((-healthAmt));
             Destroy(gameObject);
         }
     }
