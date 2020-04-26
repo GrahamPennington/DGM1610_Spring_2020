@@ -18,7 +18,7 @@ public class RaycastFire : MonoBehaviour
     {
         float hitForce = 200f;
 
-        damage = SciptablePistol.pistolDamage;
+        //damage = SciptablePistol.pistolDamage;
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
@@ -46,6 +46,7 @@ public class RaycastFire : MonoBehaviour
                         {
                             health.TakeDamage(damage);
                             Debug.Log("Ouch, you hit me!");
+							Debug.Log(health.currentHealth);
                         }
                     }
                 }
